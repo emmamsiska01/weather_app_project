@@ -18,18 +18,21 @@
       <div class="main_container">
         <div class="col_1">
           <header>
-            <h1 class="current_date" id="current_time">Sun,7 Jan 2023</h1>
+            <h1 class="current_date" id="current_time"></h1>
           </header>
           <div class="temperature_container">
-            <h1 id="city">
-              Lilongwe
-              <br />
-              ⛅ <span id="temperature">34</span>°C
-            </h1>
-            <br />
+            <h1 class="city_temp" id="city"></h1>
+            <div id="icon">
+              <img
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
+                class="weather-app-icon"
+              />
+            </div>
+            <p class="temp"><span id="temperature"></span></p>
+
             <p class="weather_details">
-              Humidity: <strong><span id="humidity">70</span>%</strong> , Wind:
-              <strong><span id="wind">7</span>km/h</strong>
+              Humidity: <strong><span id="humidity"></span></strong> , Wind:
+              <strong><span id="wind"></span></strong>
             </p>
           </div>
         </div>
@@ -50,8 +53,11 @@
         </div>
       </div>
       <footer>
-        This project was coded by Emma Msiska and is open-sourced on GitHub and
-        hosted on Netlify
+        This project was coded by Emma Msiska and is
+        <a href="https://github.com/emmamsiska01/weather_app_project"
+          >open-sourced on GitHub</a
+        >
+        and hosted on <a href="#">Netlify</a>
       </footer>
     </div>
     <script src="src/index.js"></script>

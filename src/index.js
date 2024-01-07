@@ -6,11 +6,14 @@ function displayCity(response) {
   let windElement = document.querySelector("#wind");
   let timeElement = document.querySelector("#current_time");
   let date = new Date(response.data.time * 1000);
+  let iconElement = document.querySelector("#icon");
+
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}"class="weather-app-icon"/>`;
 
   cityElement.innerHTML = response.data.city;
-  temperatureElement.innerHTML = Math.round(temperatureValue);
-  humidityElement.innerHTML = response.data.temperature.humidity;
-  windElement.innerHTML = response.data.wind.speed;
+  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+  windElement.innerHTML = `${response.data.wind.speed}km/h`;
+  temperatureElement.innerHTML = `${Math.round(temperatureValue)}°C`;
   timeElement.innerHTML = formatDate(date);
 }
 function formatDate(date) {
@@ -41,5 +44,6 @@ function searchSubmit(event) {
   let SearchInput = document.querySelector("#city_name");
   findCityTemperature(SearchInput.value);
 }
+
 let searchCity = document.querySelector("#search_form");
 searchCity.addEventListener("submit", searchSubmit);
